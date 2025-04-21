@@ -27,6 +27,13 @@ def _get_message_content(message):
         content = message["content"]["text"]
     elif "result" in message["content"]:
         content = message["content"]["result"]
+    elif isinstance(message["content"], dict) and "content_type" in message["content"]:
+        # Handle user_editable_context and potentially other content types
+        if message["content"]["content_type"] == "user_editable_context":
+            # Extract user profile or other relevant information
+            content = message["content"].get("user_profile", "Context information (no details available)")
+        else:
+            content = f"Content of type: {message['content']['content_type']}"
     else:
         raise ValueError(f"Unknown message format: {message['content']}")
     
