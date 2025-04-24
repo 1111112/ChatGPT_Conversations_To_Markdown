@@ -1,0 +1,30 @@
+{
+    "workbench.colorTheme": "Default Light Modern",
+    "github.copilot.chat.scopeSelection": true,
+    "files.autoSave": "afterDelay",
+    "cursor.aipreview.enabled": true,
+    "cursor.chat.showSuggestedFiles": true,
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "markdown",
+        "scminput"
+    ],
+    "cursor.chat.alwaysSearchWeb": true,
+    "cursor.cpp.enablePartialAccepts": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "cursor.terminal.usePreviewBox": true,
+    "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
+    "notebook.defaultFormatter": "ms-toolsai.vscode-jupyter-cell-tags",
+    "cursor.composer.renderPillsInsteadOfBlocks": true,
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.html": "default"
+    },
+    "git.timeline.showUncommitted": true,
+    "specstory.derivedCursorRules.enabled": false,
+    "specstory.helpUsImprove": false,
+    "specstory.autoSave.enabled": true,
+    "python.defaultInterpreterPath": "/Users/summerdr/opt/anaconda3/envs/444visa/bin/python",
+    "python.terminal.activateEnvironment": true
+} 

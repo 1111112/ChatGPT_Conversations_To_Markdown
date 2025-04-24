@@ -4,7 +4,9 @@ ChatGPT Conversations to Markdown is a Python script that converts your exported
 ## Features
 * Convert ChatGPT conversations stored in JSON format to Markdown
 * Customize user and assistant names using a configuration file
-* Include or exclude date in the output Markdown files
+* Include creation time in front of the title in the generated Markdown files
+* Filter out conversations created before a specific year (default: 2025)
+* Optional summarization feature (can be enabled in config.json for future implementation)
 * Customize the format of file names, dates, and message separators
 * Process individual JSON files or all JSON files in a directory
 
@@ -16,7 +18,7 @@ git clone https://github.com/daugaard47/ChatGPT_Conversations_To_Markdown.git
 2. Change into the project directory:
 ```
 cd ChatGPT_Conversations_To_Markdown
-````
+```
 3. Create a virtual environment (optional but recommended):
 ```
 python -m venv venv
@@ -37,6 +39,8 @@ pip install tqdm
 
 ## Usage
 1. Update the config.json file with your desired settings, such as user and assistant names, input and output paths, and other formatting options.
+   - Set `filter_before_year` to control which conversations are included (default: 2025)
+   - Set `enable_summarization` to false/true to control the summarization feature (default: false)
 2. Create your JSON input directory and add the JSON file e.g. conversations.json you received from the export of the ChatGPT conversations to this location. Add this path to your config file.
 3. Create the Output Directory and add this path to your config file. Your markdown files will appear here after the script runs.
 4. Run the script:
@@ -46,7 +50,28 @@ python chatgpt_json_to_markdown.py
 5. The script will process your conversations and save them as Markdown files in the specified output directory.
 6. When the script is done, you will see a message like this:
 ```
-All Done Buddy! You can access your files here: <output_directory>
+All Done! You can access your files here: <output_directory>
+```
+
+## Configuration Options
+The `config.json` file includes the following options:
+
+```json
+{
+  "user_name": "User",                  // Your name in the conversations
+  "assistant_name": "ChatGPT",          // Assistant name in the conversations
+  "input_mode": "directory",            // "file" or "directory"
+  "input_path": "path/to/input",        // Input file or directory path
+  "output_directory": "markdown_output", // Output directory for Markdown files
+  "date_format": "%Y-%m-%d",            // Format for dates in output
+  "file_name_format": "{title}",        // Format for output filenames
+  "include_date": true,                 // Include date in the formatted output
+  "message_separator": "\n\n",          // Separator between messages
+  "skip_empty_messages": true,          // Skip messages with no content
+  "max_file_size_mb": 100,              // Maximum allowed input file size
+  "filter_before_year": 2025,           // Skip conversations before this year
+  "enable_summarization": false         // Enable summarization placeholder
+}
 ```
 
 Now you can easily read, share, or archive your ChatGPT conversations in a more human-readable format. Enjoy!
