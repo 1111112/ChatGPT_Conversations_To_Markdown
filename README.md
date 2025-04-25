@@ -34,16 +34,16 @@ source venv/bin/activate
 
 5. Install the required Python dependencies:
 ```
-pip install tqdm
+pip install tqdm python-dateutil
 ```
 
 ## Usage
-1. Update the config.json file with your desired settings, such as user and assistant names, input and output paths, and other formatting options.
+1. Create your own `config.json` file based on the provided `config.template.json`. Update it with your desired settings, such as user and assistant names, input and output paths, and other formatting options.
    - Set `filter_before_year` to control which conversations are included (default: 2025)
    - Set `enable_summarization` to false/true to control the summarization feature (default: false)
 2. Create your JSON input directory and add the JSON file e.g. conversations.json you received from the export of the ChatGPT conversations to this location. Add this path to your config file.
 3. Create the Output Directory and add this path to your config file. Your markdown files will appear here after the script runs.
-4. Run the script:
+4. Create your own shell script based on the provided `run_chatgpt_processor.template.sh` or run the script directly:
 ```
 python chatgpt_json_to_markdown.py
 ```
@@ -61,8 +61,8 @@ The `config.json` file includes the following options:
   "user_name": "User",                  // Your name in the conversations
   "assistant_name": "ChatGPT",          // Assistant name in the conversations
   "input_mode": "directory",            // "file" or "directory"
-  "input_path": "path/to/input",        // Input file or directory path
-  "output_directory": "markdown_output", // Output directory for Markdown files
+  "input_path": "./data/input",         // Input file or directory path
+  "output_directory": "./data/output",  // Output directory for Markdown files
   "date_format": "%Y-%m-%d",            // Format for dates in output
   "file_name_format": "{title}",        // Format for output filenames
   "include_date": true,                 // Include date in the formatted output
@@ -73,5 +73,12 @@ The `config.json` file includes the following options:
   "enable_summarization": false         // Enable summarization placeholder
 }
 ```
+
+## Important Note
+The repository includes template files for configuration (`config.template.json`) and running the script (`run_chatgpt_processor.template.sh`). You should create your own versions of these files with your personal settings:
+- Copy `config.template.json` to `config.json` and update the paths and settings
+- Copy `run_chatgpt_processor.template.sh` to `run_chatgpt_processor.sh` and update the paths
+
+Both personal configuration files are excluded from git to protect your privacy.
 
 Now you can easily read, share, or archive your ChatGPT conversations in a more human-readable format. Enjoy!

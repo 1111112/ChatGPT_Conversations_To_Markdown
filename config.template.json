@@ -1,9 +1,9 @@
 {
-  "user_name": "Summer",
+  "user_name": "User",
   "assistant_name": "ChatGPT",
   "input_mode": "directory",
-  "input_path": "/Users/summerdr/Desktop/papers/chatgpt_history/20250421chatgpthistory",
-  "output_directory": "/Users/summerdr/Desktop/papers/chatgpt_history/chatgpt_markdown",
+  "input_path": "./data/input",
+  "output_directory": "./data/output",
   "date_format": "%Y-%m-%d",
   "file_name_format": "{title}",
   "include_date": true,
@@ -12,4 +12,4 @@
   "max_file_size_mb": 100,
   "filter_before_year": 2025,
   "enable_summarization": false
-}
+} 

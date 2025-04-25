@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Set paths 
-MARKDOWN_DIR="/Users/summerdr/Desktop/papers/chatgpt_history/chatgpt_markdown"
-OBSIDIAN_DIR="/Users/summerdr/Desktop/papers/chatgpt_history/obsidian_chatgpt"
-JSON_DIR="/Users/summerdr/Desktop/papers/chatgpt_history/20250421chatgpthistory"
+MARKDOWN_DIR="./data/output/chatgpt_markdown"
+OBSIDIAN_DIR="./data/output/obsidian_chatgpt"
+JSON_DIR="./data/input/chatgpt_history"
 
 # Display menu
 echo "=== ChatGPT Conversation Processor ==="
@@ -45,4 +45,4 @@ INPUTS
     ;;
 esac
 
-echo "All done!"
+echo "All done!" 
